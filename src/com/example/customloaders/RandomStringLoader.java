@@ -13,6 +13,13 @@ public class RandomStringLoader extends AsyncTaskLoader<ArrayList<String>> {
 	}
 	
 	@Override
+	protected void onStartLoading() {
+		// The loader wouldn't start without this.??
+		forceLoad();
+		super.onStartLoading();
+	}
+
+	@Override
 	public ArrayList<String> loadInBackground() {
 		// Create maxLen random strings of length between 5 & 15 chars.
 		final int maxLen = 20;
@@ -25,7 +32,7 @@ public class RandomStringLoader extends AsyncTaskLoader<ArrayList<String>> {
 			int len = rand.nextInt(15) + 5;
 			for (int j = 0; j < len; j++)
 				s += chars[rand.nextInt(chars.length)];
-			list.add(s);
+			list.add(s + "\n");
 		}
 		// add sleep pause for demo effect.
 		try {
