@@ -4,5 +4,6 @@
 	<string name="app_name">CustomLoaders</string>
 	<string name="hello_world">Hello world!</string>
 	<string name="action_settings">Settings</string>
+	<string name="more_data">More data for demo...</string>
 
 </resources>

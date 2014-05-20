@@ -4,11 +4,13 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Intent;
 import android.content.Loader;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 // ArrayList<String> because that's what the loader returns.
@@ -30,6 +32,7 @@ public class MainActivity extends Activity
 	@Override
 	public void onLoadFinished(Loader<ArrayList<String>> loader,
 			ArrayList<String> data) {
+		tv.setText("");
 		for (String t : data)
 			tv.setText(tv.getText() + t);
 		
@@ -48,6 +51,13 @@ public class MainActivity extends Activity
 		// loader id is 99, bundle is empty.
 		// these get passed to the onCreateLoader method.
 		this.getLoaderManager().initLoader(99, null, this);
+	}
+	// demo of broadcast receiver/ observer
+	public void moreDataOnClick(View view){
+		Intent intent = new Intent();
+		intent.setAction(RandomStringLoader.StringLoader_RELOAD);
+		sendBroadcast(intent);
+		 
 	}
 
 	@Override

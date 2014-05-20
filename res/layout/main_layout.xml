@@ -7,11 +7,18 @@
 	tools:context="com.example.customloaders.MainActivity"
 	tools:ignore="MergeRootFrame" >
 
-    <TextView
-    	android:id="@+id/textView"
-    	android:layout_width="match_parent"
-    	android:layout_height="match_parent"
-    	android:textSize="25sp" />
+	<TextView
+		android:id="@+id/textView"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:textSize="25sp" />
+
+	<Button
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_horizontal"
+		android:onClick="moreDataOnClick"
+		android:text="@string/more_data" />
 
 </LinearLayout>
-
