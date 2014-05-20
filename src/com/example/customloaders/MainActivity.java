@@ -1,17 +1,35 @@
 package com.example.customloaders;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
+import android.app.LoaderManager.LoaderCallbacks;
+import android.content.Loader;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity 
+	implements LoaderCallbacks<ArrayList<String>> {
+
+	@Override
+	public Loader<ArrayList<String>> onCreateLoader(int id, Bundle args) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void onLoadFinished(Loader<ArrayList<String>> loader,
+			ArrayList<String> data) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onLoaderReset(Loader<ArrayList<String>> loader) {
+		// TODO Auto-generated method stub
+		
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
